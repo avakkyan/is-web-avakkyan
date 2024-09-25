@@ -7,10 +7,12 @@ body {
     padding: 20px;
 }
 
-.header {
-    background-color: cornsilk;
-    padding: 10px 0;
+header {
+    background-color: #f5e1a4; /* Светло-песочный */
+    padding: 20px;
     border-bottom: 2px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 nav a {
