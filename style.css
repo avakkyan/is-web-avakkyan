@@ -26,6 +26,28 @@ nav a:hover {
     text-decoration: none;
 }
 
+h3 {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #8b0000;
+    text-align: left;
+    background-color: #ffe4e1;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+q {
+    font-style: italic;
+    color: #8b0000;
+    background-color: #ffe4e1;
+    padding: 5px;
+    border-left: 4px solid #8b0000;
+}
+
 .heading {
     color: darkred;
     background-color: cornsilk;
@@ -34,32 +56,10 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* смещение, размытие, цвет тени */
 }
 
-.about__image {
+.about_image {
     width: 50%;
     height: auto;
     background-color: cornsilk;
-}
-.about__title {
-    color: maroon;
-}
-
-.about__text {
-    background-color: rgb(255, 232, 206);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.quote__text {
-    font-style: italic;
-    margin: 10px 0;
-}
-
-.picture__title {
-    margin-top: 20px;
-}
-
-.picture__art {
-    font-family: monospace;
 }
 
 .aside {
@@ -70,7 +70,7 @@ nav a:hover {
     border-radius: 5px;
 }
 
-.code__block {
+.code_block {
     background-color: cornsilk;
     padding: 10px;
     border-radius: 5px;
