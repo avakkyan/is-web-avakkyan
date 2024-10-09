@@ -13,36 +13,81 @@
 <body>
 <header>
     <nav>
+        <a href="#main">Главная</a>
+        <a href="#gallery">Каталог</a>
+        <a href="#code">Мой код</a>
         <a href="#about">О нас</a>
-        <a href="#picture">Прикольная картинка</a>
         <a href="#contacts">Контакты</a>
     </nav>
+    <div class="nav-icon">
+        <img src="images/free-icon-wine-1425570.png" alt="Иконка" class="icon">
+    </div>
 </header>
 
 <h1 class="heading">Грузинское вино</h1>
 
-<main>
-    <h3>Потом здесь будут вот такие разделы:</h3>
-    <ul>
-        <li>История</li>
-        <li>Каталог</li>
-        <li>Новости</li>
-    </ul>
-
-    <section class="gallery">
-        <h3>Галерея вин</h3>
-        <div>
-            <img src="https://simplewine.ru/upload/iblock/e72/e721eb32a5abda2700c65bdabaffb5f6.png" class="img_gallery" alt="">
-            <img src="https://simplewine.ru/upload/iblock/ff3/ff357c5272a07ff219e110d4e56884d6.png" class="img_gallery" alt="">
-            <img src="https://simplewine.ru/upload/iblock/464/464d80bfede895f91ee2515c9f91d03c.png" class="img_gallery" alt="">
-            <img src="https://simplewine.ru/upload/iblock/3fd/3fd48655e9f8185ee6bbe4c70d445c87.png" class="img_gallery" alt="">
-            <img src="https://simplewine.ru/upload/iblock/11d/11df28dd14c0b078a543e1d3f6ca7dca.png" class="img_gallery" alt="">
-            <img src="https://simplewine.ru/upload/iblock/73b/73bf528b65e71382be53657ed6784244.png" class="img_gallery" alt="">
-            <img src="https://simplewine.ru/upload/iblock/bb2/bb2413f7abc09905450aa94dd2e1b9ae.png" class="img_gallery" alt="">
-
-
+<main id="main">
+    <section class="gallery-section">
+        <h3 class="section-title">Галерея вин</h3>
+        <div class="gallery" id="gallery">
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/124/124953d575d2eaecd85b609f4ae9c7aa.png" class="img_gallery" alt="">
+                <p class="product-name">Вино Khikhvi Qvevri, Giuaani, 2021</p>
+                <p class="product-price">3890 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/6a9/6a9273f5d174ba63ab2712fcaafa1bcb.png" class="img_gallery" alt="Вино 2">
+                <p class="product-name">Вино Besini Qvevri White, 2021</p>
+                <p class="product-price">29990 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/130/130b5936094de555e3b640cc0bb5d1d8.png" class="img_gallery" alt="">
+                <p class="product-name">Вино Kisi Qvevri, Binekhi, 2019</p>
+                <p class="product-price">2797 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/659/65923adbdbf044003eb395f860922783.png" class="img_gallery" alt="">
+                <p class="product-name">Вино Kindzmarauli, Besini, 2023</p>
+                <p class="product-price">1640 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/368/368f7eb766e7a7d75abf15b102c5c5cf.png" class="img_gallery" alt="Вино 3">
+                <p class="product-name">Вино Mukuzani, Besini, 2022</p>
+                <p class="product-price">2990 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/d59/d59451b8da04ca6a72db0e0d17cc4266.png" class="img_gallery" alt="">
+                <p class="product-name">Вино Ojaleshi, Binekhi, 2023</p>
+                <p class="product-price">1498 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/dff/dff44330428ab8c55f728496e31abb2f.png" class="img_gallery" alt="">
+                <p class="product-name">Вино Saperavi Cabernet Sauvignon, Giuaani, 2019</p>
+                <p class="product-price">2290 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/c2a/c2a0711f6f8138b967ffdca7c3982992.png" class="img_gallery" alt="">
+                <p class="product-name">Вино Besini Premium Red, 2021</p>
+                <p class="product-price">3490 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/58f/58f194efc0a2ad728f5f11f64479de8f.png" class="img_gallery" alt="">
+                <p class="product-name">Вино Lukasi Saperavi , 2019</p>
+                <p class="product-price">4490 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/089/0892b212a85673044970ca005ee65c40.png" class="img_gallery" alt="">
+                <p class="product-name">Вино Kisi Qvevri, Giuaani, 2022</p>
+                <p class="product-price">3390 руб</p>
+            </div>
+            <div class="product">
+                <img src="https://simplewine.ru/upload/iblock/cbf/cbf641cef74634e5fd4a4dc611e3aa07.png" class="img_gallery" alt="">
+                <p class="product-name">Вино Kindzmarauli Shildis Mtebi, 2023</p>
+                <p class="product-price">1390 руб</p>
+            </div>
         </div>
     </section>
+
 
     <section id="wine-prices">
         <h3>Цены на вино</h3>
@@ -153,7 +198,7 @@
         Интересный факт: <del>Мое любимое вино</del> Любимое вино Сталина — хванчкара.
     </aside>
 
-    <section class="code">
+    <section class="code" id="code">
         <p>Вот кусочек моего кода:</p>
         <pre class="code_block">
         <code>
@@ -176,7 +221,7 @@
 </main>
 
 <footer id="contacts">
-    Никакие права не защищены. Автор: <b>@avakkyan</b>
+    Никакие права не защищены. Надеемся Вам есть 18 лет. Автор: <b>@avakkyan</b>
 </footer>
 
 </body>
