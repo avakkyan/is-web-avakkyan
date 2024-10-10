@@ -16,6 +16,9 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
@@ -64,28 +67,35 @@ nav {
     display: flex;
     flex-wrap: wrap;   /* перенос */
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     margin-top: 30px;
 }
 
 .img_gallery {
     width: 100%;
-    height: auto;
+    height: 200%;
     max-width: 100%;
+    object-fit: cover;
     margin-bottom: 10px;
     border-radius: 5px;
 }
 
 .product {
-    width: 220px;
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    max-width: 250px;
+    padding: 10px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.2s;
     background-color: #FFFFE0;
+    flex-grow: 1;
 }
+
 
 .product:hover {
     transform: scale(1.05);
@@ -195,26 +205,25 @@ footer {
     }
 }
 
-table {
-    width: 70%;
-    border-collapse: collapse;
+.price-table {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 0.5fr 1.5fr 1fr 1.5fr 0.7fr;
+    width: 100%;
     margin: 20px 0;
+    border-collapse: collapse;
+    table-layout: auto;
+    overflow-x: auto;
 }
 
 thead {
-    display: table-header-group;
+    display: contents;
 }
 
 tbody {
-    display: table-row-group;
+    display: contents;
 }
 
-tr {
-    display: grid;
-    grid-template-columns: 1.5fr 0.8fr 0.5fr 1.5fr 1fr 1.5fr 0.7fr;
-}
-
-th, td {
+.price-table th, td{
     padding: 10px;
     border: 1px solid #ccc;
     text-align: center;
@@ -222,6 +231,7 @@ th, td {
 
 thead th {
     background-color: #f5e1a4;
+    border-collapse: collapse;
     font-weight: bold;
 }
 
