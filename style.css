@@ -215,8 +215,9 @@ footer {
 }
 
 .price-table table {
-    width: 100%; /* Задаем ширину таблицы */
-    border-collapse: collapse; /* Убираем двойные границы */
+    display: grid;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 
@@ -227,6 +228,12 @@ footer {
 }
 
 thead th {
+    background-color: #f5e1a4;
+    font-weight: bold;
+    grid-auto-columns: auto;
+}
+
+thead tr {
     background-color: #f5e1a4;
     font-weight: bold;
 }
