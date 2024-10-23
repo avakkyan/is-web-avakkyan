@@ -23,13 +23,10 @@ header {
 
 nav a {
     padding: 15px;
-    text-decoration: underline;
-    color: #952F37;
-}
-
-nav a:hover {
-    color: darkred;
     text-decoration: none;
+    color: #952F37;
+    font-weight: normal; /* Обычный вес для всех ссылок */
+    position: relative;
 }
 nav {
     display: flex;
@@ -45,6 +42,33 @@ nav {
     flex-grow: 1;
     justify-content: center;
 }
+
+nav a.active {
+    font-weight: bold;
+}
+
+nav a.active::after {
+    font-weight: bold;
+    content: "•";
+    color: darkred;
+    font-size: 24px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    font-weight: bold;
+    content: "•";
+    color: darkred;
+    font-size: 24px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
 .nav-icon .icon {
     width: 30px;
@@ -148,14 +172,18 @@ q {
     border-left: 4px solid #8b0000;
 }
 
+
 footer {
-    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
     background-color: #f5e1a4;
     padding: 10px;
     text-align: center;
     border-top: 2px solid #e0e0e0;
+    bottom: 0;
+    width: 100%;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
+    }
 
 
 .heading {
@@ -210,14 +238,14 @@ footer {
     margin: 20px 0;
     overflow-x: auto;
     gap: 1px;
+    width: auto;
     grid-template-columns: repeat(7, 1fr);
 
 }
 
 .price-table table {
-    display: grid;
-    width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 
@@ -225,6 +253,7 @@ footer {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: center;
+    width: calc(100% / 7);
 }
 
 thead th {
@@ -252,5 +281,154 @@ tbody tr:nth-child(odd) td {
     .column-price {
         display: none;
     }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.hero {
+    background: url('images/main.jpg') center center / cover no-repeat;
+    height: 100vh; /* Высота 100% экрана */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    background-color: rgba(249, 219, 202, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid #952F37;
+}
+
+.hero-buttons .btn {
+    background-color: #952F37;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero-buttons .btn:hover {
+    background-color: darkred;
+}
+
+.history-header {
+    background: url('images/bochka.jpg') center center / cover no-repeat;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.history-content {
+    padding: 40px 20px;
+    background-color: #FAEAD7;
+    line-height: 1.8;
+}
+
+.history-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #FFFFE0;
+    border-left: 5px solid #952F37;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.history-section h2 {
+    color: #8B0000;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.history-section p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.about-header {
+    background: url('images/about.jpg') center center / cover no-repeat;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.about-content {
+    padding: 40px 20px;
+    background-color: #FAEAD7;
+    line-height: 1.8;
+}
+
+.about-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #FFFFE0;
+    border-left: 5px solid #952F37;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    color: #8B0000;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.team-card {
+    background-color: #FFFFE0;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.benefit-item {
+    text-align: center;
+}
+
+.team-card h4 {
+    color: #8B0000;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    margin-top: 5px;
 }
 

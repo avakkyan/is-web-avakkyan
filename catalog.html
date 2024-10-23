@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet">
-    <meta name="keywords" content="Грузинское вино история каталог новости">
-    <meta name="description" content="Данный ресурс описывает богатство и разнообразие грузинских вин, а также их историю">
+    <meta name="keywords" content="Грузинское вино каталог">
+    <meta name="description" content="Каталог грузинских вин с подробной информацией о каждом из них">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap" rel="stylesheet">
-    <title>Главная страница</title>
+    <script src="main.js"></script>
+    <title>Каталог грузинских вин</title>
 </head>
 <body>
+
 <header>
     <nav>
-        <a href="#main">Главная</a>
-        <a href="#gallery">Каталог</a>
-        <a href="#code">Мой код</a>
-        <a href="#about">О нас</a>
-        <a href="#contacts">Контакты</a>
+        <a href="index.html">Главная</a>
+        <a href="catalog.html" class="active">Каталог</a>
+        <a href="history.html">История</a>
+        <a href="about.html">О нас</a>
     </nav>
     <div class="nav-icon">
         <img src="images/free-icon-wine-1425570.png" alt="Иконка" class="icon">
     </div>
 </header>
 
-<h1 class="heading">Грузинское вино</h1>
-
-<main id="main">
+<main>
+    <h1 class="heading">Каталог грузинских вин</h1>
     <section class="gallery-section">
         <h3 class="section-title">Галерея вин</h3>
-        <div class="gallery" id="gallery">
+        <div class="gallery">
             <div class="product">
                 <img src="https://simplewine.ru/upload/iblock/124/124953d575d2eaecd85b609f4ae9c7aa.png" class="img_gallery" alt="">
                 <p class="product-name">Вино Khikhvi Qvevri, Giuaani, 2021</p>
@@ -93,6 +93,7 @@
         </div>
     </section>
 
+    <h3 class="table-title">Средние цены на вина</h3>
     <section id="price-table" class="price-table">
         <table>
             <thead>
@@ -173,59 +174,10 @@
             </tbody>
         </table>
     </section>
-
-
-
-    <section id="about">
-        <img src="images/4-wines.png" class="about_image" alt="">
-        <h3 class=>О сайте</h3>
-        <p>Это веб-сайт про грузинское вино, его историю, каталог различных грузинских вин, а также новости про грузинские вина.</p>
-    </section>
-
-    <section>
-        <p><i>Федерико Феллини</i> — <q>Хорошее вино — как хороший фильм: быстро заканчивается, оставляя великолепное послевкусие.</q></p>
-    </section>
-
-    <section id="picture">
-        <h3>Прикольная картинка бокалов</h3>
-        <pre>
-    ┏━┓┏━┓
-    ┃┈┃┃┈┃
-    ╰┳╯╰┳╯
-     ┃  ┃
-     ┻  ┻
-        </pre>
-    </section>
-
-    <aside class="aside">
-        Интересный факт: <del>Мое любимое вино</del> Любимое вино Сталина — хванчкара.
-    </aside>
-
-    <section class="code" id="code">
-        <p>Вот кусочек моего кода:</p>
-        <pre class="code_block">
-        <code>
-            &lt;h3&gt;Потом здесь будут вот такие разделы:&lt;/h3&gt;
-            &lt;ul&gt;
-                &lt;li&gt;История&lt;/li&gt;
-                &lt;li&gt;Каталог&lt;/li&gt;
-                &lt;li&gt;Новости&lt;/li&gt;
-            &lt;/ul&gt;
-            &lt;section id=&quot;about&quot;&gt;
-                &lt;h3 style=&quot;color: maroon&quot;&gt;О сайте&lt;/h3&gt;
-                &lt;p&gt;Это веб-сайт про грузинское вино, его историю, каталог различных грузинских вин, а также новости про грузинские вина.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;p&gt;&lt;cite&gt;Федерико Феллини&lt;/cite&gt; — &lt;q&gt;Хорошее вино — как хороший фильм: быстро заканчивается, оставляя великолепное послевкусие.&lt;/q&gt;&lt;/p&gt;
-            &lt;section id=&quot;picture&quot;&gt;
-            &lt;h3&gt;Прикольная картинка бокалов&lt;/h3&gt;
-        </code>
-        </pre>
-    </section>
 </main>
 
 <footer id="contacts">
     Никакие права не защищены. Надеемся Вам есть 18 лет. Автор: <b>@avakkyan</b>
 </footer>
-
 </body>
 </html>
