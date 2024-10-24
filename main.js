@@ -1,4 +1,13 @@
-window.addEventListener("load", function () {
-    const loadTime = performance.now();
-    document.getElementById("load-stats").textContent = `Страница загружена за: ${Math.round(loadTime)} мс`;
-});
+(function () {
+    window.addEventListener("load", function () {
+        const [performanceEntry] = performance.getEntriesByType("navigation");
+
+        const loadTime =
+            performanceEntry.domContentLoadedEventEnd -
+            performanceEntry.startTime;
+
+        const footer = document.getElementById("load-stats");
+
+        footer.innerHTML = `Страничка загрузилась: ${Math.round(loadTime)} мс`;
+    });
+})();
