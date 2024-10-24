@@ -25,7 +25,7 @@ nav a {
     padding: 15px;
     text-decoration: none;
     color: #952F37;
-    font-weight: normal; /* Обычный вес для всех ссылок */
+    font-weight: normal;
     position: relative;
 }
 nav {
@@ -177,6 +177,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
     background-color: #f5e1a4;
+    color: black;
     padding: 10px;
     text-align: center;
     border-top: 2px solid #e0e0e0;
@@ -233,46 +234,52 @@ footer {
     }
 }
 
+.price-table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
 .price-table {
-    display: grid;
     margin: 20px 0;
     overflow-x: auto;
     gap: 1px;
     width: auto;
+    display: grid;
     grid-template-columns: repeat(7, 1fr);
-
 }
 
-.price-table table {
-    border-collapse: collapse;
-    table-layout: fixed;
+.price-table thead,
+.price-table tbody, .price-table tr {
+    display: contents;
 }
 
-
-.price-table th, .price-table td {
-    padding: 10px;
-    border: 1px solid #ccc;
+.price-table th {
+    background-color: #f5e1a4;
+    color: black;
+    padding: 12px 15px;
     text-align: center;
-    width: calc(100% / 7);
-}
-
-thead th {
-    background-color: #f5e1a4;
     font-weight: bold;
-    grid-auto-columns: auto;
+    border: 1px solid #dddddd;
+    top: 0;
+
 }
 
-thead tr {
-    background-color: #f5e1a4;
-    font-weight: bold;
+.price-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+    text-align: center;
 }
 
-tbody tr:nth-child(even) td {
+.price-table tr:nth-child(even) td {
     background-color: #f9f9f9;
 }
 
-tbody tr:nth-child(odd) td {
+.price-table tr:nth-child(odd) td {
     background-color: #ffe4e1;
+}
+
+.price-table-table tr:hover td {
+    background-color: #f5f5f5;
 }
 .column-price{
 }
@@ -291,26 +298,25 @@ html, body {
 
 .hero {
     background: url('images/main.jpg') center center / cover no-repeat;
-    height: 100vh; /* Высота 100% экрана */
+    height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: cornsilk;
     overflow: hidden;
 }
 
 .hero-overlay {
-    background-color: rgba(249, 219, 202, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    border: 3px solid #952F37;
 }
 
 .hero-buttons .btn {
     background-color: #952F37;
-    color: black;
+    color: cornsilk;
     padding: 10px 20px;
     margin: 10px;
     border: none;
@@ -415,24 +421,6 @@ html, body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.benefits-list {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.benefit-item {
-    flex: 1;
-    background-color: #FFFFE0;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 .team-card h4 {
     color: #8B0000;
