@@ -1,0 +1,170 @@
+body {
+    font-family: "Moderustic", sans-serif;
+    background-color: cornsilk;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #F9DBCA;
+    padding: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    padding: 15px;
+    text-decoration: none;
+    color: #952F37;
+    font-weight: normal;
+    position: relative;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+nav a.active {
+    font-weight: bold;
+}
+
+nav a.active::after {
+    font-weight: bold;
+    content: "•";
+    color: darkred;
+    font-size: 24px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    font-weight: bold;
+    content: "•";
+    color: darkred;
+    font-size: 24px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #d2691e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #ff8c00;
+}
+
+
+.wine-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #d2691e;
+}
+
+.wine-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: #ffe4c4;
+    color: #333;
+}
+
+main {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Расстояние между панелью и коллекцией */
+    padding: 20px;
+}
+
+.form-container {
+    width: 250px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Расстояние между элементами формы */
+}
+
+.wine-collection {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Две колонки */
+    grid-auto-rows: auto;
+    gap: 20px;
+    max-width: 500px; /* Ширина для двух колонок */
+}
+
+.wine-card {
+    width: 170px;
+    height: 350px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wine-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.wine-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}

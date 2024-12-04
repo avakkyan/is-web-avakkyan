@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конструктор вин</title>
+  <link rel="stylesheet" href="lab5.css">
+  <script src="loader.js"></script>
+  <script src="active_point.js"></script>
+  <script src="lab5.js" defer></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="history.html">История</a>
+    <a href="about.html">О нас</a>
+    <a href="vine_constuctor.html">Конструктор</a>
+  </nav>
+</header>
+
+<main>
+  <section class="form-container">
+    <form id="wine-form">
+      <label for="wine-name">Название вина:</label>
+      <input id="wine-name" type="text" name="wineName" placeholder="Введите название" required>
+      <small id="wine-name-error" class="error-message"></small>
+
+      <label for="wine-country">Страна:</label>
+      <select id="wine-country" name="wineCountry">
+        <option value="Франция">Франция</option>
+        <option value="Италия">Италия</option>
+        <option value="Грузия">Грузия</option>
+        <option value="Испания">Испания</option>
+      </select>
+
+      <label for="wine-type">Тип вина:</label>
+      <select id="wine-type" name="wineType">
+        <option value="Красное">Красное</option>
+        <option value="Белое">Белое</option>
+        <option value="Игристое">Игристое</option>
+      </select>
+
+      <label for="wine-price">Цена:</label>
+      <select id="wine-price" name="winePrice">
+        <option value="500-1000">500-1000 ₽</option>
+        <option value="1000-2000">1000-2000 ₽</option>
+        <option value="2000-3000">2000-3000 ₽</option>
+        <option value="3000+">3000+ ₽</option>
+      </select>
+
+      <button type="submit">Добавить в коллекцию</button>
+    </form>
+  </section>
+
+  <section id="wine-collection" class="wine-collection">
+  </section>
+
+  <template id="wine-card-template">
+    <div class="wine-card">
+      <div class="wine-image" style="background-image: url('images/a.png');"></div>
+      <h3 class="wine-name"></h3>
+      <p><strong>Страна:</strong> <span class="wine-country"></span></p>
+      <p><strong>Тип:</strong> <span class="wine-type"></span></p>
+      <p><strong>Цена:</strong> <span class="wine-price"></span></p>
+      <button class="delete-btn">Удалить</button>
+    </div>
+  </template>
+</main>
+
+</body>
+</html>
