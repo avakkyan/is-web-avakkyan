@@ -1,4 +1,4 @@
-import { fetchImageUrl, fetchImageForCard } from './fetchPics.js';
+import { fetchImageUrl } from './fetchPics.js';
 
 let wines = JSON.parse(localStorage.getItem('wines')) || [];
 
@@ -26,13 +26,8 @@ function displayCard(wine) {
 
     if (wine.image) {
         imageElement.src = wine.image;
-    } else if (!navigator.onLine) {
-        imageElement.src = 'error.jpg';
     } else {
-        imageElement.src = 'images/spinn.gif';
-        fetchImageForCard(card).catch(() => {
-            imageElement.src = 'error.jpg';
-        });
+        imageElement.src = 'images/error.jpg';
     }
 
     card.querySelector('.delete-btn').addEventListener('click', function () {
@@ -88,9 +83,6 @@ document.getElementById('wine-form').addEventListener('submit', function (e) {
             saveToLocalStorage();
             displayCard(newWine);
             document.getElementById('wine-form').reset();
-        })
-        .catch((error) => {
-            console.error('Ошибочка:', error);
         })
         .finally(() => {
             togglePreloader(false);
