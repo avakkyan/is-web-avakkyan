@@ -1,43 +1,61 @@
-export const fetchImageUrl = async () => {
-    try {
+export const fetchImageUrl = () => {
+    return new Promise((resolve, reject) => {
         const randomId = Math.floor(Math.random() * 5000) + 1;
         const url = `https://jsonplaceholder.typicode.com/photos/${randomId}`;
         console.log('Fetching image from:', url);
 
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`Ошибка загрузки: ${response.status}`);
-
-        const data = await response.json();
-        return data?.thumbnailUrl || 'error.jpg';
-    } catch (error) {
-        console.error('Ошибка загрузки картинки:', error);
-        return 'error.jpg';
-    }
+        fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Ошибка загрузки: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const imageUrl = data?.thumbnailUrl || 'error.jpg';
+                resolve(imageUrl);
+            })
+            .catch((error) => {
+                console.error('Ошибка загрузки картинки:', error);
+                resolve('error.jpg');
+            });
+    });
 };
 
-export const fetchImageForCard = async (card) => {
+export const fetchImageForCard = (card) => {
     const imageElement = card.querySelector('.wine-image');
 
-    try {
+    return new Promise((resolve, reject) => {
         const randomId = Math.floor(Math.random() * 5000) + 1;
         const url = `https://jsonplaceholder.typicode.com/photos/${randomId}`;
 
-        const response = await fetch(url);
+        fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Ошибка загрузки: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const imageUrl = data?.thumbnailUrl || 'error.jpg';
 
-        const data = await response.json();
-        const imageUrl = data?.thumbnailUrl || 'error.jpg';
+                const realImage = new Image();
+                realImage.src = imageUrl;
 
-        const realImage = new Image();
-        realImage.src = imageUrl;
+                realImage.onload = () => {
+                    imageElement.src = imageUrl;
+                    resolve();
+                };
 
-        realImage.onload = () => {
-            imageElement.src = imageUrl;
-        };
-
-        realImage.onerror = () => {
-            imageElement.src = 'error.jpg';
-        };
-    } catch (error) {
-        console.error('Ошибка загрузки картинки:', error);
-    }
+                realImage.onerror = () => {
+                    imageElement.src = 'error.jpg';
+                    reject();
+                };
+            })
+            .catch((error) => {
+                console.error('Ошибка загрузки картинки:', error);
+                imageElement.src = 'error.jpg';
+                reject();
+            });
+    });
 };

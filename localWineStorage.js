@@ -23,7 +23,7 @@ function displayCard(wine) {
     card.querySelector('.wine-price').textContent = wine.price;
 
     const imageElement = card.querySelector('.wine-image');
-    const preloader = document.getElementById('preloader')
+
     if (wine.image) {
         imageElement.src = wine.image;
     } else if (!navigator.onLine) {
@@ -53,7 +53,7 @@ function displayAllCards() {
     });
 }
 
-document.getElementById('wine-form').addEventListener('submit', async function (e) {
+document.getElementById('wine-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
     togglePreloader(true);
@@ -73,27 +73,28 @@ document.getElementById('wine-form').addEventListener('submit', async function (
     const wineType = document.getElementById('wine-type').value;
     const winePrice = document.getElementById('wine-price').value;
 
-    try {
-        const imageUrl = await fetchImageUrl();
+    fetchImageUrl()
+        .then((imageUrl) => {
+            const newWine = {
+                id: Date.now(),
+                name: wineName,
+                country: wineCountry,
+                type: wineType,
+                price: winePrice,
+                image: imageUrl,
+            };
 
-        const newWine = {
-            id: Date.now(),
-            name: wineName,
-            country: wineCountry,
-            type: wineType,
-            price: winePrice,
-            image: imageUrl,
-        };
-
-        wines.push(newWine);
-        saveToLocalStorage();
-        displayCard(newWine);
-        document.getElementById('wine-form').reset();
-    } catch (error) {
-        console.error('Ошибочка:', error);
-    } finally {
-        togglePreloader(false);
-    }
+            wines.push(newWine);
+            saveToLocalStorage();
+            displayCard(newWine);
+            document.getElementById('wine-form').reset();
+        })
+        .catch((error) => {
+            console.error('Ошибочка:', error);
+        })
+        .finally(() => {
+            togglePreloader(false);
+        });
 });
 
 document.addEventListener('DOMContentLoaded', displayAllCards);
